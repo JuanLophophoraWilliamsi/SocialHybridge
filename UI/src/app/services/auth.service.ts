@@ -1,13 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { catchError } from 'rxjs/operators';
+import { catchError, tap } from 'rxjs/operators';
 
 @Injectable({
     providedIn: 'root'
 })
 export class AuthService {
+    //private apiUrl = 'http://localhost:5062/api/auth';
     private apiUrl = 'http://34.210.21.76:5062/api/auth';
+    private currentUser: any;
 
     constructor(private http: HttpClient) { }
 
@@ -23,7 +25,14 @@ export class AuthService {
     }
 
     login(user: any): Observable<any> {
-        return this.http.post(`${this.apiUrl}/login`, user);
+        return this.http.post(`${this.apiUrl}/login`, user).pipe(
+            tap(response => {
+                this.currentUser = response;
+            })
+        );
+    }
+
+    getCurrentUser() {
+        return this.currentUser;
     }
 }
-

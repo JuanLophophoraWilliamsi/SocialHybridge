@@ -1,5 +1,5 @@
 <footer class="footer" [ngClass]="{'has-cards': getPath()!=='/user-profile' && getPath()!=='/register' && getPath()!=='/login'}">
-  <div class="container container-lg" *ngIf="getPath()!=='/user-profile' && getPath()!=='/register' && getPath()!=='/login'">
+<!--   <div class="container container-lg" *ngIf="getPath()!=='/user-profile' && getPath()!=='/register' && getPath()!=='/login'">
     <div class="row">
       <div class="col-md-6 mb-5 mb-md-0">
         <div class="card card-lift--hover shadow border-0">
@@ -16,12 +16,12 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
   <div class="container">
     <div class="row row-grid align-items-center" [ngClass]="{'my-md': getPath()!=='/user-profile' && getPath()!=='/register' && getPath()!=='/login', 'mb-5':getPath()==='/user-profile' || getPath()==='/register' || getPath()==='/login'}">
       <div class="col-lg-6">
-        <h3 class="text-primary font-weight-light mb-2">Thank you for supporting us!</h3>
-        <h4 class="mb-0 font-weight-light">Let's get in touch on any of these platforms.</h4>
+        <h3 class="text-primary font-weight-light mb-2">Gracias por ser parte de esta Comunidad Social Hybridge!</h3>
+        <h4 class="mb-0 font-weight-light">Siguenos en nuestras redes.</h4>
       </div>
       <div class="col-lg-6 text-lg-center btn-wrapper">
         <a target="_blank" href="https://twitter.com/creativetim" class="btn btn-neutral btn-icon-only btn-twitter btn-round btn-lg" ngbTooltip="Follow us">
@@ -43,13 +43,13 @@
       <div class="col-md-6">
         <div class="copyright">
           &copy; {{test | date: 'yyyy'}}
-          <a href="https://www.creative-tim.com?ref=adsa-footer" target="_blank">Creative Tim</a>.
+          <a href="https://www.social.hybridge.com" target="_blank">Social Hybridge</a>.
         </div>
       </div>
       <div class="col-md-6">
         <ul class="nav nav-footer justify-content-end">
           <li class="nav-item">
-            <a href="https://www.creative-tim.com?ref=adsa-footer" class="nav-link" target="_blank">Creative Tim</a>
+              <a href="https://www.creative-tim.com?ref=adsa-footer" class="nav-link" target="_blank">Social Hybridge</a>
           </li>
           <li class="nav-item">
             <a href="https://www.creative-tim.com/presentation?ref=adsa-footer" class="nav-link" target="_blank">About Us</a>

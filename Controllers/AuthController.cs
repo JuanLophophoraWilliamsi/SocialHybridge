@@ -42,9 +42,21 @@ namespace SocialHybridge.Controllers
             if (user == null)
                 return Unauthorized();
 
+            // Hacer una copia del usuario antes de cambiar IsNewUser a false
+            var userCopy = new User
+            {
+                Id = user.Id,
+                Username = user.Username,
+                Password = user.Password,
+                IsNewUser = user.IsNewUser
+            };
+
+            // Cambiar IsNewUser a false y guardar los cambios
             user.IsNewUser = false;
             await _context.SaveChangesAsync();
-            return Ok(user);
+
+            // Devolver la copia del usuario
+            return Ok(userCopy);
         }
     }
 }
